@@ -20,6 +20,7 @@ Note: specify `-d` flag to run either of the above commands in detached mode.
 To deploy this application to a production environment, it would be recommended you create a CI/CD pipline. This could be done using AWS CodePipeline. The ideal flow would look as such...
 
 code->build->test->release->deploy
+
 (See `Pipeline-for-dockerized-microservices.png` for an visualisation of how this could be implemented in AWS)
 
 code: Code for the application would need to be stored in version control, either GitHub or AWS Code Commit. Every change to the source code should trigger a new build so fast feedback can be delivered to the developers.
