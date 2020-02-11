@@ -5,7 +5,8 @@ Two dockerized microservices (emphasis on the micro) that provide a JSON API ove
 Run `docker-compose up --build` to deploy on your local machine. 
 
 If deploying to a swarm cluster run `docker stack deploy -c stack.yml dockerized-api`.
-This will require the images to be created already. Ensure swarm is initialised using `docker swarm init`
+This will require the images to have be created already. 
+Ensure swarm is initialised using `docker swarm init`
 
 Note: specify `-d` flag to run either of the above commands in detached mode.
 
