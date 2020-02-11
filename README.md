@@ -19,7 +19,7 @@ Note: specify `-d` flag to run either of the above commands in detached mode.
 # CI/CD
 To deploy this application to a production environment, it would be recommended you create a CI/CD pipline. This could be done using **AWS CodePipeline**. The ideal flow would look as such...
 
-![aws-pipeline-for-dockerized-microservices](https://github.com/robertpountney92/dockerized-mircoservices/blob/master/Pipeline-for-dockerized-microservices.png)
+![aws-pipeline-for-dockerized-microservices](https://github.com/robertpountney92/dockerized-mircoservices/blob/master/aws-pipline-for-dockerized-microservices.png)
 
 The above image can be broken down into the following steps:
 
