@@ -17,23 +17,23 @@ Note: specify `-d` flag to run either of the above commands in detached mode.
 `curl -X POST -H "Content-Type:application/json" http://localhost:8081/reverse -d '{"message": "Hello World"}'`
 
 # CI/CD
-To deploy this application to a production environment, it would be recommended you create a CI/CD pipline. This could be done using AWS CodePipeline. The ideal flow would look as such...
-
-code->build->test->release->deploy
-
-(See `Pipeline-for-dockerized-microservices.png` for an visualisation of how this could be implemented in AWS)
+To deploy this application to a production environment, it would be recommended you create a CI/CD pipline. This could be done using **AWS CodePipeline**. The ideal flow would look as such...
 
 ![Pipeline-for-dockerized-microservices](https://github.com/robertpountney92/dockerized-mircoservices/blob/master/Pipeline-for-dockerized-microservices.png)
 
-**code:** Code for the application would need to be stored in version control, either GitHub or AWS Code Commit. Every change to the source code should trigger a new build so fast feedback can be delivered to the developers.
+The above image can be broken down into the following steps:
 
-**build:** Involves building the image/s for the application can ustilise AWS CodeBuild. This is an artifact that we can store and version.
+**code->build->test->release->deploy**
+
+**code:** Code for the application would need to be stored in version control, either GitHub or **AWS CodeCommit**. Every change to the source code should trigger a new build so fast feedback can be delivered to the developers.
+
+**build:** Involves building the image/s for the application can ustilise **AWS CodeBuild**. This is an artifact that we can store and version.
 
 **test:** Ideally there would be a testing phase that creates a container based on the image. Tests can thnen be perform against this container to see if the appliation is running as desired.
 
-**release:** Once we are happy that the image has passed all the tests and is fit for pupose, we can create a new release for the image and push the new image to a container registry (Amazon ECR).
+**release:** Once we are happy that the image has passed all the tests and is fit for pupose, we can create a new release for the image and push the new image to a container registry (**AWS ECR**).
 
-**deploy:** The final stage is to deploy to production, Amazon ECS can be levereaged to orchestrate container deployments
+**deploy:** The final stage is to deploy to production, **AWS ECS** can be levereaged to orchestrate container deployments
 
 # Avoid system downtime
 To avoid system downtime in a production enviornment, deployment stategy such as blue-green deployment could be implemented. 
