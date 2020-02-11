@@ -36,6 +36,8 @@ The above image can be broken down into the following steps:
 **deploy:** The final stage is to deploy to production, **AWS ECS** can be levereaged to orchestrate container deployments
 
 # Avoid system downtime
-To avoid system downtime in a production enviornment, deployment stategy such as blue-green deployment could be implemented. 
+To avoid system downtime in a production enviornment, deployment stategy such as Canary deployment could be implemented. 
 
-Blue-green deployment will consist of two identical environments, in front of which there is a load balancer that allows you to direct traffic to the appropriate environment. All currrent traffic could be routed to one environment, say blue, whislt the new release release could be routed to the other environment, say green. Once we are happy the deployment to the green environemnt is successful we can routing traffic to the green environment. This should mitigate system downtime.
+Canary deployments are a pattern for rolling out releases to a subset of users or servers. The idea is to first deploy the change to a small subset of servers, test it, and then roll the change out to the rest of the servers.
+
+Canary deployments can be implemented across containers (or pods in k8s) within a cluster by utilising **rolling updates**. This involves deploying new containers to the cluster and slowly over time decommissioning the old containers and re-reouting all requests to the new containers. This approach should acheive zero downtime.
