@@ -1,6 +1,7 @@
 'use strict';
 
 const express = require('express');
+const app = express();
 let bodyParser = require('body-parser')
 
 // create application/json parser
@@ -12,12 +13,6 @@ let urlencodedParser = bodyParser.urlencoded({ extended: false })
 // Constants
 const PORT = 8081;
 const HOST = '0.0.0.0';
-
-// App
-const app = express();
-app.get('/', (req, res) => {
-  res.send('Hello World 10');
-});
 
 function reverseString(str) {
     let splitString = str.split("");

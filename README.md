@@ -4,11 +4,13 @@ Two dockerized microservices (emphasis on the micro) that provide a JSON API ove
 # Depolyment details
 Run `docker-compose up --build` to deploy on your local machine. 
 
-If deploying to a swarm cluster run `docker stack deploy -c stack.yml dockerized-api`.
-This will require the images to have be created already. 
-Ensure swarm is initialised using `docker swarm init`
+If deploying to a docker swarm cluster:
 
-Note: specify `-d` flag to run either of the above commands in detached mode.
+ - Ensure swarm is initialised using `docker swarm init`
+ - To build images run `docker-compose build`
+ - Then to deploy `docker stack deploy -c stack.yml dockerized-microservices`.
+
+Note: This project is just a use case, for production deployment ideally images should be stored in public/private registry.
 
 # Perform POST request /api
 `curl -X POST -H "Content-Type:application/json" http://localhost:8080/api -d '{"message": "Hello World"}'`
