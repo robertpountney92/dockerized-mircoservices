@@ -23,6 +23,8 @@ code->build->test->release->deploy
 
 (See `Pipeline-for-dockerized-microservices.png` for an visualisation of how this could be implemented in AWS)
 
+![Pipeline-for-dockerized-microservices](https://github.com/robertpountney92/dockerized-mircoservices/blob/master/Pipeline-for-dockerized-microservices.png)
+
 **code:** Code for the application would need to be stored in version control, either GitHub or AWS Code Commit. Every change to the source code should trigger a new build so fast feedback can be delivered to the developers.
 
 **build:** Involves building the image/s for the application can ustilise AWS CodeBuild. This is an artifact that we can store and version.
