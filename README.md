@@ -11,10 +11,10 @@ Ensure swarm is initialised using `docker swarm init`
 Note: specify `-d` flag to run either of the above commands in detached mode.
 
 # Perform POST request /api
-`curl -X POST -H "Content-Type:application/json" http://localhost:8080/api -d '{"message": "Hi again, World"}'`
+`curl -X POST -H "Content-Type:application/json" http://localhost:8080/api -d '{"message": "Hello World"}'`
 
 # Perform POST request /reverse
-`curl -X POST -H "Content-Type:application/json" http://localhost:8081/reverse -d '{"message": "Hi again, World"}'`
+`curl -X POST -H "Content-Type:application/json" http://localhost:8081/reverse -d '{"message": "Hello World"}'`
 
 # CI/CD
 To deploy this application to a production environment, it would be recommended you create a CI/CD pipline. This could be done using AWS CodePipeline. The ideal flow would look as such...
