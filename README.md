@@ -1,5 +1,9 @@
 # dockerized-mircoservices
-Two dockerized microservices (emphasis on the micro) that provide a JSON API over HTTP.
+Two dockerized microservices that provide a JSON API over HTTP.
+
+# Prerequisites
+ - Ensure `Docker` is installed
+ - Ensure `docker-compose` is installed
 
 # Depolyment details
 Run `docker-compose up --build` to deploy on your local machine. 
