@@ -23,15 +23,15 @@ code->build->test->release->deploy
 
 (See `Pipeline-for-dockerized-microservices.png` for an visualisation of how this could be implemented in AWS)
 
-code: Code for the application would need to be stored in version control, either GitHub or AWS Code Commit. Every change to the source code should trigger a new build so fast feedback can be delivered to the developers.
+**code:** Code for the application would need to be stored in version control, either GitHub or AWS Code Commit. Every change to the source code should trigger a new build so fast feedback can be delivered to the developers.
 
-build: Involves building the image/s for the application can ustilise AWS CodeBuild. This is an artifact that we can store and version.
+**build:** Involves building the image/s for the application can ustilise AWS CodeBuild. This is an artifact that we can store and version.
 
-test: Ideally there would be a testing phase that creates a container based on the image. Tests can thnen be perform against this container to see if the appliation is running as desired.
+**test:** Ideally there would be a testing phase that creates a container based on the image. Tests can thnen be perform against this container to see if the appliation is running as desired.
 
-release: Once we are happy that the image has passed all the tests and is fit for pupose, we can create a new release for the image and push the new image to a container registry (Amazon ECR).
+**release:** Once we are happy that the image has passed all the tests and is fit for pupose, we can create a new release for the image and push the new image to a container registry (Amazon ECR).
 
-deploy: The final stage is to deploy to production, Amazon ECS can be levereaged to orchestrate container deployments
+**deploy:** The final stage is to deploy to production, Amazon ECS can be levereaged to orchestrate container deployments
 
 # Avoid system downtime
 To avoid system downtime in a production enviornment, deployment stategy such as blue-green deployment could be implemented. 
