@@ -6,12 +6,12 @@ Two dockerized microservices that provide a JSON API over HTTP.
  - Ensure `docker-compose` is installed
 
 # Depolyment details
-Run `docker-compose up --build` to deploy on your local machine. 
+Run `docker-compose -f stack.yml up --build` to deploy on your local machine. 
 
 If deploying to a docker swarm cluster:
 
  - Ensure swarm is initialised using `docker swarm init`
- - To build images run `docker-compose build`
+ - To build images run `docker-compose -f stack.yml build`
  - Then to deploy `docker stack deploy -c stack.yml dockerized-microservices`.
 
 Note: This project is just a use case, for production deployment ideally images should be stored in public/private registry.
